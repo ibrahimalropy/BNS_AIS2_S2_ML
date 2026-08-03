@@ -16,7 +16,7 @@ def run_quiz(quiz):
             cprint("Correct ✅","green")
             score+=1
         else:
-            cprint(f"your answer is wrong and the correct answer is {item["answer"]} ❎","red")  
+            cprint(f"your answer is wrong and the correct answer is {item['answer']} ❎","red")  
     print(f"your final score : {score}/{len(quiz)}")          
 
 
