@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1788837236675,
+      "tag": "0000_chemical_mesmero",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1788837477625,
+      "tag": "0001_moaning_outlaw_kid",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1788841171026,
+      "tag": "0002_bumpy_cannonball",
+      "breakpoints": true
+    }
+  ]
+}

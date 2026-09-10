@@ -1,0 +1,1 @@
+ALTER TABLE `products` ADD `discountPercent` double DEFAULT 0 NOT NULL;
