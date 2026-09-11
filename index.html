@@ -1,0 +1,889 @@
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CR7 | كريستيانو رونالدو - الأسطورة</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Cinzel:wght@400;600;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root{
+    --bg: #0a0a0f;
+    --bg-2: #14141d;
+    --gold: #d4af37;
+    --gold-light: #f5d76e;
+    --gold-dark: #8a6d1f;
+    --white: #f5f5f5;
+    --gray: #a0a0a0;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Tajawal', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    overflow-x:hidden;
+  }
+  .font-display{ font-family:'Cinzel', serif; }
+
+  /* Gold gradient text */
+  .gold-text{
+    background: linear-gradient(135deg, #f5d76e 0%, #d4af37 40%, #8a6d1f 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+
+  /* Navbar */
+  .nav-blur{
+    background: rgba(10,10,15,0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(212,175,55,0.15);
+  }
+  .nav-link{ position:relative; transition: color .3s; }
+  .nav-link::after{
+    content:''; position:absolute; bottom:-6px; right:0; width:0; height:2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transition: width .35s ease;
+  }
+  .nav-link:hover{ color: var(--gold-light); }
+  .nav-link:hover::after{ width:100%; }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+      radial-gradient(ellipse at top right, rgba(212,175,55,0.18), transparent 55%),
+      radial-gradient(ellipse at bottom left, rgba(212,175,55,0.08), transparent 50%),
+      linear-gradient(180deg, #0a0a0f 0%, #14141d 100%);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:''; position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(212,175,55,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,175,55,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+  .hero-glow{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:600px; height:600px; border-radius:50%;
+    background: radial-gradient(circle, rgba(212,175,55,0.25), transparent 60%);
+    filter: blur(40px);
+    animation: pulse 5s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ transform:translate(-50%,-50%) scale(1); opacity:.6; }
+    50%{ transform:translate(-50%,-50%) scale(1.15); opacity:.9; }
+  }
+
+  /* Floating particles */
+  .particle{
+    position:absolute; border-radius:50%; background: var(--gold);
+    opacity:0; pointer-events:none;
+    animation: floatUp linear infinite;
+  }
+  @keyframes floatUp{
+    0%{ transform:translateY(100vh) translateX(0); opacity:0; }
+    10%{ opacity:.8; }
+    90%{ opacity:.8; }
+    100%{ transform:translateY(-10vh) translateX(40px); opacity:0; }
+  }
+
+  /* CR7 big text */
+  .cr7-mega{
+    font-family:'Cinzel', serif;
+    font-weight:900;
+    font-size: clamp(8rem, 22vw, 22rem);
+    line-height:.85;
+    background: linear-gradient(180deg, rgba(212,175,55,0.18) 0%, rgba(212,175,55,0.02) 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    letter-spacing:-0.05em;
+    user-select:none;
+  }
+
+  .btn-gold{
+    background: linear-gradient(135deg, #f5d76e, #d4af37);
+    color:#0a0a0f;
+    transition: all .35s;
+    box-shadow: 0 8px 25px rgba(212,175,55,0.25);
+  }
+  .btn-gold:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(212,175,55,0.45);
+  }
+  .btn-outline{
+    border:1px solid rgba(212,175,55,0.4);
+    color: var(--gold-light);
+    transition: all .35s;
+  }
+  .btn-outline:hover{
+    background: rgba(212,175,55,0.1);
+    border-color: var(--gold);
+  }
+
+  /* Section title */
+  .section-title{
+    position:relative;
+    display:inline-block;
+  }
+  .section-title::before{
+    content:''; position:absolute; right:0; bottom:-12px; width:60px; height:3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  /* Cards */
+  .card{
+    background: linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    border:1px solid rgba(212,175,55,0.12);
+    backdrop-filter: blur(10px);
+    transition: all .4s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .card::before{
+    content:''; position:absolute; top:0; right:-100%; width:100%; height:100%;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.08), transparent);
+    transition: right .6s ease;
+  }
+  .card:hover{
+    transform: translateY(-6px);
+    border-color: rgba(212,175,55,0.4);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(212,175,55,0.1);
+  }
+  .card:hover::before{ right:100%; }
+
+  /* Timeline */
+  .timeline{
+    position:relative;
+    padding: 2rem 0;
+  }
+  .timeline::before{
+    content:''; position:absolute; top:0; bottom:0; right:50%;
+    width:2px; background: linear-gradient(180deg, transparent, var(--gold), transparent);
+  }
+  .timeline-item{
+    position:relative;
+    width:50%;
+    padding: 2rem 3rem;
+  }
+  .timeline-item:nth-child(odd){ margin-right:50%; text-align:left; padding-left:3rem; }
+  .timeline-item:nth-child(even){ margin-left:50%; text-align:right; padding-right:3rem; }
+  .timeline-item::before{
+    content:''; position:absolute; top:2.5rem; width:16px; height:16px;
+    border-radius:50%; background: var(--gold);
+    box-shadow: 0 0 0 4px rgba(212,175,55,0.2), 0 0 20px rgba(212,175,55,0.6);
+  }
+  .timeline-item:nth-child(odd)::before{ left:-8px; }
+  .timeline-item:nth-child(even)::before{ right:-8px; }
+  @media (max-width: 768px){
+    .timeline::before{ right: 20px; }
+    .timeline-item{ width:100%; margin:0 !important; padding-right:50px !important; padding-left:0 !important; text-align:right !important; }
+    .timeline-item::before{ right:12px !important; left:auto !important; }
+  }
+
+  /* Stats counter */
+  .stat-num{
+    font-family:'Cinzel', serif;
+    font-weight:900;
+    background: linear-gradient(135deg, #f5d76e, #d4af37);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+
+  /* Clubs */
+  .club-card{
+    position:relative;
+    border-radius:1rem;
+    overflow:hidden;
+    transition: all .5s;
+    aspect-ratio: 3/4;
+  }
+  .club-card img{
+    width:100%; height:100%; object-fit:cover;
+    transition: transform .8s;
+    filter: grayscale(40%) brightness(0.6);
+  }
+  .club-card:hover img{ transform: scale(1.08); filter: grayscale(0%) brightness(0.85); }
+  .club-card .overlay{
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, transparent 30%, rgba(10,10,15,0.95));
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding: 1.5rem;
+  }
+
+  /* Reveal animations */
+  .reveal{
+    opacity:0;
+    transform: translateY(40px);
+    transition: opacity .9s ease, transform .9s ease;
+  }
+  .reveal.active{ opacity:1; transform: translateY(0); }
+
+  .reveal-left{ opacity:0; transform: translateX(-50px); transition: all .9s ease; }
+  .reveal-left.active{ opacity:1; transform: translateX(0); }
+
+  .reveal-right{ opacity:0; transform: translateX(50px); transition: all .9s ease; }
+  .reveal-right.active{ opacity:1; transform: translateX(0); }
+
+  /* Quote */
+  .quote-section{
+    background:
+      linear-gradient(rgba(10,10,15,0.85), rgba(10,10,15,0.85)),
+      radial-gradient(circle at center, rgba(212,175,55,0.15), transparent 60%);
+    position:relative;
+  }
+
+  /* Image frame */
+  .gold-frame{
+    position:relative;
+    border-radius: 1rem;
+    overflow:hidden;
+  }
+  .gold-frame::after{
+    content:''; position:absolute; inset:0;
+    border:1px solid rgba(212,175,55,0.5);
+    border-radius:1rem;
+    pointer-events:none;
+  }
+  .gold-frame::before{
+    content:''; position:absolute; inset:-1px;
+    background: linear-gradient(135deg, var(--gold), transparent 30%, transparent 70%, var(--gold));
+    border-radius:1rem;
+    z-index:-1;
+    opacity:.5;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background: #0a0a0f; }
+  ::-webkit-scrollbar-thumb{ background: linear-gradient(180deg, var(--gold), var(--gold-dark)); border-radius:5px; }
+
+  /* Mobile menu */
+  .mobile-menu{
+    transform: translateX(100%);
+    transition: transform .4s ease;
+  }
+  .mobile-menu.open{ transform: translateX(0); }
+
+  /* Ball animation */
+  @keyframes spinBall{
+    0%{ transform: rotate(0deg) translateY(0); }
+    50%{ transform: rotate(180deg) translateY(-20px); }
+    100%{ transform: rotate(360deg) translateY(0); }
+  }
+  .ball-icon{ animation: spinBall 4s ease-in-out infinite; display:inline-block; }
+
+  /* Achievement badge */
+  .badge{
+    background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05));
+    border:1px solid rgba(212,175,55,0.3);
+    transition: all .4s;
+  }
+  .badge:hover{
+    background: linear-gradient(135deg, rgba(212,175,55,0.3), rgba(212,175,55,0.1));
+    transform: scale(1.05);
+  }
+
+  /* Loading shimmer on image */
+  .shimmer{
+    background: linear-gradient(90deg, #14141d 25%, #1f1f2a 50%, #14141d 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  @keyframes shimmer{
+    0%{ background-position: 200% 0; }
+    100%{ background-position: -200% 0; }
+  }
+
+  /* Marquee */
+  .marquee{
+    overflow:hidden;
+    border-top:1px solid rgba(212,175,55,0.2);
+    border-bottom:1px solid rgba(212,175,55,0.2);
+    background: linear-gradient(90deg, rgba(212,175,55,0.05), transparent, rgba(212,175,55,0.05));
+  }
+  .marquee-track{
+    display:flex; gap:4rem; white-space:nowrap;
+    animation: marquee 30s linear infinite;
+  }
+  @keyframes marquee{
+    0%{ transform: translateX(0); }
+    100%{ transform: translateX(-50%); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="fixed top-0 right-0 left-0 z-50 nav-blur">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-3">
+      <div class="w-11 h-11 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #f5d76e, #d4af37);">
+        <span class="font-display font-black text-black text-lg">CR</span>
+      </div>
+      <div>
+        <div class="font-display font-bold text-xl gold-text leading-none">RONALDO</div>
+        <div class="text-[10px] tracking-[0.3em] text-gray-400">CR7 • LEGEND</div>
+      </div>
+    </a>
+    <ul class="hidden md:flex items-center gap-9 text-sm font-medium">
+      <li><a href="#home" class="nav-link">الرئيسية</a></li>
+      <li><a href="#biography" class="nav-link">السيرة</a></li>
+      <li><a href="#timeline" class="nav-link">المسيرة</a></li>
+      <li><a href="#stats" class="nav-link">الأرقام</a></li>
+      <li><a href="#clubs" class="nav-link">الأندية</a></li>
+      <li><a href="#achievements" class="nav-link">الإنجازات</a></li>
+    </ul>
+    <a href="#biography" class="hidden md:inline-block btn-gold px-5 py-2 rounded-full text-sm font-bold">اكتشف القصة</a>
+    <button id="menuBtn" class="md:hidden text-gold-light text-2xl"><i class="fas fa-bars" style="color:#f5d76e;"></i></button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-72 z-50 md:hidden" style="background:#0a0a0f; border-left:1px solid rgba(212,175,55,0.2);">
+  <div class="p-6">
+    <button id="closeMenu" class="text-2xl" style="color:#f5d76e;"><i class="fas fa-times"></i></button>
+    <ul class="mt-8 space-y-6 text-lg">
+      <li><a href="#home" class="nav-link block">الرئيسية</a></li>
+      <li><a href="#biography" class="nav-link block">السيرة</a></li>
+      <li><a href="#timeline" class="nav-link block">المسيرة</a></li>
+      <li><a href="#stats" class="nav-link block">الأرقام</a></li>
+      <li><a href="#clubs" class="nav-link block">الأندية</a></li>
+      <li><a href="#achievements" class="nav-link block">الإنجازات</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero pt-20">
+  <div class="hero-glow"></div>
+  <div id="particles" class="absolute inset-0 overflow-hidden"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center w-full">
+    <div class="text-center md:text-right">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6" style="border:1px solid rgba(212,175,55,0.3); background:rgba(212,175,55,0.05);">
+        <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+        <span class="text-xs tracking-widest text-yellow-200">الأسطورة الخالدة</span>
+      </div>
+      <h1 class="font-display font-black text-5xl md:text-7xl leading-tight mb-4">
+        <span class="gold-text">كريستيانو</span><br>
+        <span class="text-white">رونالدو</span>
+      </h1>
+      <p class="text-gray-400 text-lg md:text-xl max-w-lg mx-auto md:mr-0 mb-8 leading-relaxed">
+        من حلم صبي صغير في جزيرة ماديرا إلى واحد من أعظم لاعبي كرة القدم في التاريخ. رحلة استثنائية من العاطفة، الانضباط، والانتصارات.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+        <a href="#biography" class="btn-gold px-7 py-3 rounded-full font-bold text-sm tracking-wide">استكشف الرحلة</a>
+        <a href="#stats" class="btn-outline px-7 py-3 rounded-full font-bold text-sm tracking-wide">الأرقام القياسية</a>
+      </div>
+
+      <div class="flex gap-8 mt-10 justify-center md:justify-start">
+        <div>
+          <div class="stat-num text-3xl font-black" data-target="900">0</div>
+          <div class="text-xs text-gray-500 tracking-wider">أهداف</div>
+        </div>
+        <div class="w-px bg-gray-700"></div>
+        <div>
+          <div class="stat-num text-3xl font-black" data-target="5">0</div>
+          <div class="text-xs text-gray-500 tracking-wider">كرات ذهبية</div>
+        </div>
+        <div class="w-px bg-gray-700"></div>
+        <div>
+          <div class="stat-num text-3xl font-black" data-target="7">0</div>
+          <div class="text-xs text-gray-500 tracking-wider">ألقاب دوري الأبطال</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative flex items-center justify-center">
+      <div class="cr7-mega absolute select-none">CR7</div>
+      <div class="relative z-10 gold-frame w-64 h-80 md:w-80 md:h-96">
+        <img src="https://images.unsplash.com/photo-1577294732726-25c2b2a7d56d?w=800&q=80" alt="Ronaldo" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1551958219-5b8a4c5de4f3?w=800&q=80'">
+      </div>
+      <div class="absolute -bottom-4 -right-4 badge px-4 py-3 rounded-xl text-center">
+        <div class="text-xs text-gray-400">SUI</div>
+        <div class="font-display font-black text-xl gold-text">Nº7</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500">
+    <span class="text-xs tracking-widest">SCROLL</span>
+    <div class="w-px h-10 bg-gradient-to-b from-yellow-400 to-transparent"></div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee py-4">
+  <div class="marquee-track text-2xl md:text-3xl font-display font-bold text-gray-600">
+    <span>● SIUUU ●</span>
+    <span class="gold-text">CRISTIANO RONALDO</span>
+    <span>● GOAT ●</span>
+    <span class="gold-text">PORTUGAL</span>
+    <span>● 7 ●</span>
+    <span class="gold-text">BALLON D'OR</span>
+    <span>● SIUUU ●</span>
+    <span class="gold-text">CRISTIANO RONALDO</span>
+    <span>● GOAT ●</span>
+    <span class="gold-text">PORTUGAL</span>
+    <span>● 7 ●</span>
+    <span class="gold-text">BALLON D'OR</span>
+  </div>
+</div>
+
+<!-- BIOGRAPHY -->
+<section id="biography" class="py-24 relative">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal-left">
+        <div class="relative">
+          <div class="gold-frame w-full h-[500px]">
+            <img src="https://images.unsplash.com/photo-1602613548801-2eb0804d1e63?w=800&q=80" alt="Young Ronaldo" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1517649763961-371c8230ea6b?w=800&q=80'">
+          </div>
+          <div class="absolute -top-6 -left-6 badge px-6 py-4 rounded-2xl">
+            <div class="text-xs text-gray-400">منذ</div>
+            <div class="font-display font-black text-2xl gold-text">1985</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div class="text-sm tracking-widest text-yellow-400 mb-3">السيرة الذاتية</div>
+        <h2 class="section-title font-display font-black text-4xl md:text-5xl mb-8">
+          <span class="gold-text">من ماديرا</span><br>
+          <span class="text-white">إلى المجد</span>
+        </h2>
+        <div class="space-y-4 text-gray-400 leading-relaxed text-lg">
+          <p>
+            وُلد <span class="text-yellow-300 font-semibold">كريستيانو رونالدو دوس سانتوس أفيرو</span> في الخامس من فبراير عام 1985، في مدينة فونشال بجزيرة ماديرا البرتغالية. سُمي تيمناً بالرئيس الأمريكي رونالد ريغان الذي كان ممثله المفضل لدى والده.
+          </p>
+          <p>
+            نشأ في أسرة متواضعة، وعرف عنه منذ صغره شغفه الكبير بكرة القدم. في سن الثانية عشرة، غادر منزله لينضم إلى أكاديمية سبورتينغ لشبونة، خطوة كانت بداية لرحلة استثنائية.
+          </p>
+          <p>
+            شارته الأولى مع سبورتينغ لفتت أنظار نادي <span class="text-yellow-300 font-semibold">مانشستر يونايتد</span> الذي تعاقد معه عام 2003، لتبدأ بعدها مسيرة من الأرقام القياسية والألقاب التاريخية.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 mt-8">
+          <div class="card p-5 rounded-xl">
+            <i class="fas fa-map-marker-alt text-yellow-400 text-xl mb-2"></i>
+            <div class="text-xs text-gray-500">مكان الميلاد</div>
+            <div class="font-bold">فونشال، ماديرا</div>
+          </div>
+          <div class="card p-5 rounded-xl">
+            <i class="fas fa-flag text-yellow-400 text-xl mb-2"></i>
+            <div class="text-xs text-gray-500">الجنسية</div>
+            <div class="font-bold">برتغالي</div>
+          </div>
+          <div class="card p-5 rounded-xl">
+            <i class="fas fa-ruler-vertical text-yellow-400 text-xl mb-2"></i>
+            <div class="text-xs text-gray-500">الطول</div>
+            <div class="font-bold">187 سم</div>
+          </div>
+          <div class="card p-5 rounded-xl">
+            <i class="fas fa-tshirt text-yellow-400 text-xl mb-2"></i>
+            <div class="text-xs text-gray-500">الرقم</div>
+            <div class="font-bold gold-text text-lg">7</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" class="py-24 relative" style="background:linear-gradient(180deg, #0a0a0f, #14141d, #0a0a0f);">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="text-sm tracking-widest text-yellow-400 mb-3">المسيرة الاحترافية</div>
+      <h2 class="font-display font-black text-4xl md:text-5xl">
+        <span class="gold-text">رحلة</span> عبر الزمن
+      </h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="card p-6 rounded-2xl">
+          <div class="font-display font-black text-3xl gold-text mb-2">2002</div>
+          <h3 class="text-xl font-bold mb-2">بداية الاحتراف</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">شارك لأول مرة مع فريق سبورتينغ لشبونة الأول بعمر 17 عاماً. سجل هدفين في أولى مبارياته لافتاً أنظار الجميع.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="card p-6 rounded-2xl">
+          <div class="font-display font-black text-3xl gold-text mb-2">2003</div>
+          <h3 class="text-xl font-bold mb-2">مانشستر يونايتد</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">انتقل إلى مانشستر يونايتد بقيادة السير أليكس فيرغسون مقابل 12.24 مليون جنيه إسترليني. فاز بكأس إنجلترا في موسمه الأول.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="card p-6 rounded-2xl">
+          <div class="font-display font-black text-3xl gold-text mb-2">2008</div>
+          <h3 class="text-xl font-bold mb-2"> الكرة الذهبية الأولى</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">حقق لقب دوري أبطال أوروبا مع يونايتد، وفاز بأول كرة ذهبية في مسيرته، وكان هداف دوري الأبطال برصيد 8 أهداف.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="card p-6 rounded-2xl">
+          <div class="font-display font-black text-3xl gold-text mb-2">2009</div>
+          <h3 class="text-xl font-bold mb-2">ريال مدريد</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">انتقل إلى ريال مدريد في صفقة قياسية بلغت 94 مليون يورو. أصبح الهداف التاريخي للنادي بـ 450 هدفاً في 438 مباراة.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="card p-6 rounded-2xl">
+          <div class="font-display font-black text-3xl gold-text mb-2">2016</div>
+          <h3 class="text-xl font-bold mb-2">بطولة أوروبا مع البرتغال</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">قاد منتخب البرتغال للفوز بأول لقب كبير في تاريخه، بطولة أمم أوروبا في فرنسا. لحظة تاريخية لا تُنسى.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="card p-6 rounded-2xl">
+          <div class="font-display font-black text-3xl gold-text mb-2">2018</div>
+          <h3 class="text-xl font-bold mb-2">يوفنتوس</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">انضم إلى يوفنتوس الإيطالي بـ 100 مليون يورو. فاز بلقبي الدوري الإيطالي مرتين، وأصبح أول لاعب يفوز بالدوري في إنجلترا وإسبانيا وإيطاليا.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="card p-6 rounded-2xl">
+          <div class="font-display font-black text-3xl gold-text mb-2">2021</div>
+          <h3 class="text-xl font-bold mb-2">العودة إلى مانشستر</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">عاد إلى مانشستر يونايتد موسم 2021-2022، وسجل 24 هدفاً في 38 مباراة رغم تقدمه في العمر، مثبتاً أنه لا يعرف التوقف.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="card p-6 rounded-2xl">
+          <div class="font-display font-black text-3xl gold-text mb-2">2023</div>
+          <h3 class="text-xl font-bold mb-2">النصر السعودي</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">انضم إلى نادي النصر السعودي في خطوة تاريخية، وفتح فصلاً جديداً لكرة القدم في الشرق الأوسط، وأصبح سفيراً رياضياً عالمياً.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats" class="py-24 relative">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="text-sm tracking-widest text-yellow-400 mb-3">أرقام تكتب التاريخ</div>
+      <h2 class="font-display font-black text-4xl md:text-5xl">
+        <span class="gold-text">إحصائيات</span> الأسطورة
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="card p-8 rounded-2xl text-center reveal">
+        <i class="fas fa-futbol text-yellow-400 text-3xl mb-3 ball-icon"></i>
+        <div class="stat-num text-5xl font-black mb-2 counter" data-target="901">0</div>
+        <div class="text-gray-400 text-sm">هدف في المسيرة</div>
+      </div>
+      <div class="card p-8 rounded-2xl text-center reveal">
+        <i class="fas fa-medal text-yellow-400 text-3xl mb-3"></i>
+        <div class="stat-num text-5xl font-black mb-2 counter" data-target="5">0</div>
+        <div class="text-gray-400 text-sm">كرات ذهبية</div>
+      </div>
+      <div class="card p-8 rounded-2xl text-center reveal">
+        <i class="fas fa-trophy text-yellow-400 text-3xl mb-3"></i>
+        <div class="stat-num text-5xl font-black mb-2 counter" data-target="34">0</div>
+        <div class="text-gray-400 text-sm">لقب رسمي</div>
+      </div>
+      <div class="card p-8 rounded-2xl text-center reveal">
+        <i class="fas fa-crown text-yellow-400 text-3xl mb-3"></i>
+        <div class="stat-num text-5xl font-black mb-2 counter" data-target="5">0</div>
+        <div class="text-gray-400 text-sm">ألقاب دوري الأبطال</div>
+      </div>
+      <div class="card p-8 rounded-2xl text-center reveal">
+        <i class="fas fa-shield-alt text-yellow-400 text-3xl mb-3"></i>
+        <div class="stat-num text-5xl font-black mb-2 counter" data-target="205">0</div>
+        <div class="text-gray-400 text-sm">مباراة دولية</div>
+      </div>
+      <div class="card p-8 rounded-2xl text-center reveal">
+        <i class="fas fa-bullseye text-yellow-400 text-3xl mb-3"></i>
+        <div class="stat-num text-5xl font-black mb-2 counter" data-target="140">0</div>
+        <div class="text-gray-400 text-sm">هدف دولي</div>
+      </div>
+      <div class="card p-8 rounded-2xl text-center reveal">
+        <i class="fas fa-fire text-yellow-400 text-3xl mb-3"></i>
+        <div class="stat-num text-5xl font-black mb-2 counter" data-target="815">0</div>
+        <div class="text-gray-400 text-sm">هدف مع الأندية</div>
+      </div>
+      <div class="card p-8 rounded-2xl text-center reveal">
+        <i class="fas fa-bolt text-yellow-400 text-3xl mb-3"></i>
+        <div class="stat-num text-5xl font-black mb-2 counter" data-target="60">0</div>
+        <div class="text-gray-400 text-sm">هاتريك في مسيرته</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLUBS -->
+<section id="clubs" class="py-24" style="background:linear-gradient(180deg,#0a0a0f,#14141d);">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="text-sm tracking-widest text-yellow-400 mb-3">رحلة عبر الأندية</div>
+      <h2 class="font-display font-black text-4xl md:text-5xl">
+        <span class="gold-text">الأندية</span> التي صنع التاريخ معها
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+      <div class="club-card reveal">
+        <img src="https://images.unsplash.com/photo-1606919550423-e0d4c7e0ed16?w=600&q=80" alt="Sporting" onerror="this.src='https://images.unsplash.com/photo-1574629810376-b3a4d9c0b2a7?w=600&q=80'">
+        <div class="overlay">
+          <div class="text-xs text-yellow-400 mb-1">2002 - 2003</div>
+          <div class="font-display font-bold text-xl">سبورتينغ</div>
+          <div class="text-xs text-gray-400">5 أهداف</div>
+        </div>
+      </div>
+      <div class="club-card reveal">
+        <img src="https://images.unsplash.com/photo-1577221034330-8e4d2c5d1a71?w=600&q=80" alt="Man Utd" onerror="this.src='https://images.unsplash.com/photo-1610503384497-fe9b1d337c1f?w=600&q=80'">
+        <div class="overlay">
+          <div class="text-xs text-yellow-400 mb-1">2003 - 2009 / 2021 - 2022</div>
+          <div class="font-display font-bold text-xl">مانشستر يونايتد</div>
+          <div class="text-xs text-gray-400">145 أهداف</div>
+        </div>
+      </div>
+      <div class="club-card reveal">
+        <img src="https://images.unsplash.com/photo-1610503384497-fe9b1d337c1f?w=600&q=80" alt="Real Madrid" onerror="this.src='https://images.unsplash.com/photo-1551958219-5b8a4c5de4f3?w=600&q=80'">
+        <div class="overlay">
+          <div class="text-xs text-yellow-400 mb-1">2009 - 2018</div>
+          <div class="font-display font-bold text-xl">ريال مدريد</div>
+          <div class="text-xs text-gray-400">450 هدفاً</div>
+        </div>
+      </div>
+      <div class="club-card reveal">
+        <img src="https://images.unsplash.com/photo-1610503384497-fe9b1d337c1f?w=600&q=80" alt="Juventus" onerror="this.src='https://images.unsplash.com/photo-1577221034330-8e4d2c5d1a71?w=600&q=80'">
+        <div class="overlay">
+          <div class="text-xs text-yellow-400 mb-1">2018 - 2021</div>
+          <div class="font-display font-bold text-xl">يوفنتوس</div>
+          <div class="text-xs text-gray-400">101 هدف</div>
+        </div>
+      </div>
+      <div class="club-card reveal">
+        <img src="https://images.unsplash.com/photo-1602613548801-2eb0804d1e63?w=600&q=80" alt="Al Nassr" onerror="this.src='https://images.unsplash.com/photo-1517649763961-371c8230ea6b?w=600&q=80'">
+        <div class="overlay">
+          <div class="text-xs text-yellow-400 mb-1">2023 - حتى الآن</div>
+          <div class="font-display font-bold text-xl">النصر السعودي</div>
+          <div class="text-xs text-gray-400">مسيرة مستمرة</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="py-24 relative">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="text-sm tracking-widest text-yellow-400 mb-3">الإنجازات والألقاب</div>
+      <h2 class="font-display font-black text-4xl md:text-5xl">
+        رفيقة <span class="gold-text">الذهب</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card p-8 rounded-2xl reveal text-center">
+        <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4" style="background:linear-gradient(135deg,#f5d76e,#8a6d1f);">
+          <i class="fas fa-trophy text-3xl text-black"></i>
+        </div>
+        <h3 class="font-display font-bold text-2xl mb-3 gold-text">5 × كرة ذهبية</h3>
+        <p class="text-gray-400 text-sm">فاز بكرات ذهبية أعوام 2008، 2013، 2014، 2016، و2017. من بين أعظم الأرقام في التاريخ.</p>
+      </div>
+
+      <div class="card p-8 rounded-2xl reveal text-center">
+        <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4" style="background:linear-gradient(135deg,#f5d76e,#8a6d1f);">
+          <i class="fas fa-star text-3xl text-black"></i>
+        </div>
+        <h3 class="font-display font-bold text-2xl mb-3 gold-text">5 × دوري الأبطال</h3>
+        <p class="text-gray-400 text-sm">بطل أوروبا 5 مرات: مرة مع مانشستر يونايتد، 4 مرات مع ريال مدريد، 3 منها متتالية.</p>
+      </div>
+
+      <div class="card p-8 rounded-2xl reveal text-center">
+        <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4" style="background:linear-gradient(135deg,#f5d76e,#8a6d1f);">
+          <i class="fas fa-globe text-3xl text-black"></i>
+        </div>
+        <h3 class="font-display font-bold text-2xl mb-3 gold-text">بطولة أمم أوروبا</h3>
+        <p class="text-gray-400 text-sm">قائد منتخب البرتغال، فاز بأول لقب دولي كبير للبرتغال عام 2016 في فرنسا.</p>
+      </div>
+
+      <div class="card p-8 rounded-2xl reveal text-center">
+        <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4" style="background:linear-gradient(135deg,#f5d76e,#8a6d1f);">
+          <i class="fas fa-shield-alt text-3xl text-black"></i>
+        </div>
+        <h3 class="font-display font-bold text-2xl mb-3 gold-text">هداف التاريخ</h3>
+        <p class="text-gray-400 text-sm">الهداف التاريخي لمنتخب البرتغال بـ 140 هدفاً، والهداف التاريخي لكرة القدم الدولية على الإطلاق.</p>
+      </div>
+
+      <div class="card p-8 rounded-2xl reveal text-center">
+        <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4" style="background:linear-gradient(135deg,#f5d76e,#8a6d1f);">
+          <i class="fas fa-futbol text-3xl text-black"></i>
+        </div>
+        <h3 class="font-display font-bold text-2xl mb-3 gold-text">هداف ريال مدريد</h3>
+        <p class="text-gray-400 text-sm">الهداف التاريخي لريال مدريد بـ 450 هدفاً في 438 مباراة فقط، رقم يصعب تخيله.</p>
+      </div>
+
+      <div class="card p-8 rounded-2xl reveal text-center">
+        <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4" style="background:linear-gradient(135deg,#f5d76e,#8a6d1f);">
+          <i class="fas fa-award text-3xl text-black"></i>
+        </div>
+        <h3 class="font-display font-bold text-2xl mb-3 gold-text">جائزة بوشكاش</h3>
+        <p class="text-gray-400 text-sm">حاصل على جائزة بوشكاش لأجمل هدف في عام 2009، عن هدفه الخيالي ضد بورتو من 40 متراً.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section py-28">
+  <div class="max-w-4xl mx-auto px-6 text-center reveal">
+    <i class="fas fa-quote-right text-5xl gold-text mb-8"></i>
+    <blockquote class="font-display text-2xl md:text-4xl font-bold leading-relaxed mb-8">
+      "كثير من الناس يكرهونني، لكن هناك المزيد ممن يحبونني. أنا لا أعبأ بمن يكرهني، فأنا أعمل بجد أكثر، وأضع هدفاً واحداً أمامي: أن أكون الأفضل."
+    </blockquote>
+    <div class="flex items-center justify-center gap-3">
+      <div class="w-12 h-px bg-gradient-to-r from-transparent to-yellow-400"></div>
+      <div class="gold-text font-bold tracking-widest">كريستيانو رونالدو</div>
+      <div class="w-12 h-px bg-gradient-to-l from-transparent to-yellow-400"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-12 border-t" style="border-color:rgba(212,175,55,0.15); background:#0a0a0f;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-8 items-center mb-8">
+      <div class="flex items-center gap-3 justify-center md:justify-start">
+        <div class="w-11 h-11 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #f5d76e, #d4af37);">
+          <span class="font-display font-black text-black">CR</span>
+        </div>
+        <div>
+          <div class="font-display font-bold text-lg gold-text">RONALDO</div>
+          <div class="text-[10px] tracking-[0.3em] text-gray-400">CR7 • LEGEND</div>
+        </div>
+      </div>
+
+      <div class="flex justify-center gap-5">
+        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:border-yellow-400 transition" style="border:1px solid rgba(212,175,55,0.2);"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:border-yellow-400 transition" style="border:1px solid rgba(212,175,55,0.2);"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:border-yellow-400 transition" style="border:1px solid rgba(212,175,55,0.2);"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:border-yellow-400 transition" style="border:1px solid rgba(212,175,55,0.2);"><i class="fab fa-youtube"></i></a>
+      </div>
+
+      <div class="text-center md:text-left text-gray-500 text-sm">
+        موقع تكريمي غير رسمي لكريستيانو رونالدو
+      </div>
+    </div>
+    <div class="text-center text-xs text-gray-600 pt-6 border-t" style="border-color:rgba(255,255,255,0.05);">
+      © 2024 CR7 Tribute. صُمم بحب لكرة القدم وللأسطورة.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Particles
+  const particlesContainer = document.getElementById('particles');
+  for(let i=0;i<25;i++){
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random()*4 + 1;
+    p.style.width = size+'px';
+    p.style.height = size+'px';
+    p.style.left = Math.random()*100 + '%';
+    p.style.animationDuration = (Math.random()*10 + 8) + 's';
+    p.style.animationDelay = Math.random()*8 + 's';
+    particlesContainer.appendChild(p);
+  }
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const closeMenu = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', ()=> mobileMenu.classList.add('open'));
+  // close on link click
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=> mobileMenu.classList.remove('open')));
+  document.addEventListener('click', (e)=>{
+    if(!mobileMenu.contains(e.target) && !menuBtn.contains(e.target) && mobileMenu.classList.contains('open')){
+      mobileMenu.classList.remove('open');
+    }
+  });
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('active');
+        // counter
+        const counter = entry.target.querySelector('.counter');
+        if(counter && !counter.dataset.done){
+          counter.dataset.done = '1';
+          animateCounter(counter);
+        }
+      }
+    });
+  }, {threshold: 0.15});
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+  // Counter animation for hero stats
+  document.querySelectorAll('[data-target]').forEach(el=>{
+    if(!el.classList.contains('counter')) return;
+  });
+  function animateCounter(el){
+    const target = parseInt(el.dataset.target);
+    let current = 0;
+    const duration = 1800;
+    const step = Math.max(1, Math.floor(target / (duration/16)));
+    const interval = setInterval(()=>{
+      current += step;
+      if(current >= target){ current = target; clearInterval(interval); }
+      el.textContent = current;
+    }, 16);
+  }
+  // hero counters
+  document.querySelectorAll('.hero [data-target]').forEach(el=>{
+    const target = parseInt(el.dataset.target);
+    let current = 0;
+    const step = Math.max(1, Math.floor(target / 100));
+    const interval = setInterval(()=>{
+      current += step;
+      if(current >= target){ current = target; clearInterval(interval); }
+      el.textContent = current;
+    }, 25);
+  });
+
+  // Smooth active nav
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', ()=>{
+    let current = '';
+    sections.forEach(sec=>{
+      const top = sec.offsetTop - 100;
+      if(window.scrollY >= top) current = sec.id;
+    });
+    navLinks.forEach(link=>{
+      link.classList.remove('text-yellow-300');
+      if(link.getAttribute('href') === '#'+current) link.classList.add('text-yellow-300');
+    });
+  });
+</script>
+
+</body>
+</html>
