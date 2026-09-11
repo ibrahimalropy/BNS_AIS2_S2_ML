@@ -1,9 +1,5 @@
-# My_Project
+# My Projects
 
-مشروع السوبرماركت المنشور على Manus.
-
-## رابط الموقع
-
-[فتح الموقع](https://supermarketm-7n6cnzwz.manus.space/)
-
-> ملاحظة: الرابط المنشور وحده لا يحتوي على ملفات المصدر القابلة للتصدير داخل بيئة GitHub. هذا المجلد يحفظ رابط المشروع حالياً، ويمكن استبدال README بملفات المصدر عند توفرها.
+- [Supermarket source](./supermarket/)
+- [Supermarket on GitHub Pages](https://ibrahimalropy.github.io/BNS_AIS2_S2_ML/supermarket/)
+- [Original Manus preview](https://supermarketm-7n6cnzwz.manus.space/)

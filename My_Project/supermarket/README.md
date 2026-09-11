@@ -1,14 +1,6 @@
 # Supermarket Management System
 
-Source files uploaded from the provided project archive.
+- [Live GitHub Pages site](https://ibrahimalropy.github.io/BNS_AIS2_S2_ML/supermarket/)
+- [Original Manus preview](https://supermarketm-7n6cnzwz.manus.space/)
 
-Original deployed site: https://supermarketm-7n6cnzwz.manus.space/
-
-## Run locally
-
-```bash
-pnpm install
-pnpm dev
-```
-
-Do not commit local `.env` files or generated dependency folders. Configure any required environment variables locally before running server-side features.
+This project includes frontend and server source files. GitHub Pages publishes the static frontend build; backend, database, authentication, and server-side integrations require a Node/server deployment.

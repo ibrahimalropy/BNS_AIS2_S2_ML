@@ -1,4 +1,4 @@
-name: Deploy daily expense calculator to GitHub Pages
+name: Deploy projects to GitHub Pages
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "daily-expense-calculator/**"
+      - "My_Project/supermarket/**"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
@@ -22,7 +23,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://ibrahimalropy.github.io/BNS_AIS2_S2_ML/
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -36,13 +37,31 @@ jobs:
       - name: Enable pnpm
         run: corepack enable
 
-      - name: Install dependencies
+      - name: Install expense calculator dependencies
         working-directory: daily-expense-calculator
         run: pnpm install --frozen-lockfile
 
-      - name: Build project
+      - name: Build expense calculator
         working-directory: daily-expense-calculator
         run: pnpm build
+
+      - name: Install supermarket dependencies
+        working-directory: My_Project/supermarket
+        run: pnpm install --frozen-lockfile
+
+      - name: Build supermarket
+        working-directory: My_Project/supermarket
+        run: pnpm build
+
+      - name: Assemble Pages site
+        run: |
+          rm -rf pages-site
+          mkdir -p pages-site/supermarket
+          cp -a daily-expense-calculator/dist/public/. pages-site/
+          cp -a My_Project/supermarket/dist/public/. pages-site/supermarket/
+          cat > pages-site/supermarket/README.txt <<'EOF'
+          Supermarket project deployed from My_Project/supermarket.
+          EOF
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -50,8 +69,18 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: daily-expense-calculator/dist/public
+          path: pages-site
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Add site links to workflow summary
+        run: |
+          {
+            echo "## Published projects"
+            echo ""
+            echo "- [Daily Expense Calculator](https://ibrahimalropy.github.io/BNS_AIS2_S2_ML/)"
+            echo "- [Supermarket Management System](https://ibrahimalropy.github.io/BNS_AIS2_S2_ML/supermarket/)"
+            echo "- [Original Manus preview](https://supermarketm-7n6cnzwz.manus.space/)"
+          } >> "$GITHUB_STEP_SUMMARY"
