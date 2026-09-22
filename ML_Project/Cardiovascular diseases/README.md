@@ -31,10 +31,10 @@ ML_Project/
 │   │   ├── heart_disease_models.pkl         # generated locally; not committed by default
 │   │   └── .gitkeep
 │   ├── data/
-│   │   └── .gitkeep                         # place CVD_cleaned.csv here locally
+│   │   └── CVD_cleaned.csv                   # cleaned training dataset
+│   ├── docs/index.html                        # GitHub Pages landing page
 │   └── requirements.txt
-│   ├── docs/index.html                          # GitHub Pages landing page
-└── .github/workflows/pages.yml              # automatic Pages deployment
+└── .github/workflows/ml-project-pages.yml    # automatic Pages deployment
 ```
 
 ## Problem definition
@@ -57,7 +57,7 @@ The notebook selects hyperparameters using `GridSearchCV` with F1 scoring and th
 
 ## Dataset
 
-The notebook expects a cleaned BRFSS-derived CSV named `CVD_cleaned.csv` with a `Heart_Disease` target. The raw dataset is intentionally not included in this repository because it is large and may have separate distribution/licensing conditions. Put it under `Cardiovascular diseases/data/` locally, or update the notebook path before training.
+The notebook uses the included cleaned BRFSS-derived CSV at `data/CVD_cleaned.csv`, with `Heart_Disease` as the target. Do not add private patient-level data or redistribute the file outside the applicable dataset terms.
 
 Expected core fields are:
 
