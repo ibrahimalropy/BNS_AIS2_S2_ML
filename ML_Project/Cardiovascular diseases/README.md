@@ -1,6 +1,6 @@
 # CardioSense — Cardiovascular Disease Prediction
 
-[![Deploy GitHub Pages](https://github.com/ibrahimalropy/BNS_AIS2_S2_ML/actions/workflows/ml-project-pages.yml/badge.svg)](https://github.com/ibrahimalropy/BNS_AIS2_S2_ML/actions/workflows/ml-project-pages.yml) [![Live Demo](https://img.shields.io/badge/Live%20Demo-CardioSense-1264a3)](https://link-resolver-pro.lovable.app/)
+[![Deploy GitHub Pages](https://github.com/ibrahimalropy/BNS_AIS2_S2_ML/actions/workflows/ml-project-pages.yml/badge.svg)](https://github.com/ibrahimalropy/BNS_AIS2_S2_ML/actions/workflows/ml-project-pages.yml) [Open on GitHub Pages](https://ibrahimalropy.github.io/BNS_AIS2_S2_ML/)
 
 **CardioSense** is an educational machine-learning project for binary cardiovascular-disease screening. It converts the original research notebook into a documented, reproducible repository and exposes the saved scikit-learn pipelines through a FastAPI endpoint.
 
