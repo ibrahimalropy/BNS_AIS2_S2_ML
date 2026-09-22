@@ -10,12 +10,10 @@
 
 | Resource | Link |
 |---|---|
-| Interactive prediction interface | [link-resolver-pro.lovable.app](https://link-resolver-pro.lovable.app/) |
 | GitHub Actions workflow | [Actions](https://github.com/ibrahimalropy/BNS_AIS2_S2_ML/actions) |
 | GitHub Pages project landing page | `https://ibrahimalropy.github.io/BNS_AIS2_S2_ML/` after the first successful deployment |
 | API documentation when running locally | `http://127.0.0.1:8000/docs` |
 
-The Lovable page is the current deployed front end. Its own copy describes the interface as an educational demo and notes that production predictions require a FastAPI backend wrapping `heart_disease_models.pkl`.
 
 ## Project structure
 
@@ -122,4 +120,4 @@ No license has been asserted yet. Add a license that matches the dataset terms a
 
 ## العربية — ملخص سريع
 
-هذا المشروع يتنبأ باحتمالية وجود مؤشرات لخطر أمراض القلب باستخدام بيانات استبيان صحية ونماذج Logistic Regression وXGBoost وRandom Forest. النتيجة **ليست تشخيصًا طبيًا**. لتجربة الواجهة افتح [CardioSense](https://link-resolver-pro.lovable.app/). لتشغيل الـ API محليًا، ضع ملف `heart_disease_models.pkl` داخل مجلد `models` ثم شغّل أمر `uvicorn` الموضح أعلاه.
+هذا المشروع يتنبأ باحتمالية وجود مؤشرات لخطر أمراض القلب باستخدام بيانات استبيان صحية ونماذج Logistic Regression وXGBoost وRandom Forest. النتيجة **ليست تشخيصًا طبيًا**. افتح صفحة المشروع من GitHub Pages أو شغّل الـ API محليًا حسب التعليمات. لتشغيل الـ API محليًا، ضع ملف `heart_disease_models.pkl` داخل مجلد `models` ثم شغّل أمر `uvicorn` الموضح أعلاه.
