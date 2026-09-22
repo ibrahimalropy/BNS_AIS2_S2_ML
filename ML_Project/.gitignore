@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+
+# Local data and generated model artifacts
+Cardiovascular diseases/data/*
+!Cardiovascular diseases/data/.gitkeep
+Cardiovascular diseases/models/*
+!Cardiovascular diseases/models/.gitkeep
+
+# Notebook noise
+.ipynb_checkpoints/
+
+# OS/editor
+.DS_Store
+.vscode/
