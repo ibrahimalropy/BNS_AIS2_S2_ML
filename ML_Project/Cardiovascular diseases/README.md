@@ -33,7 +33,7 @@ ML_Project/
 │   ├── data/
 │   │   └── .gitkeep                         # place CVD_cleaned.csv here locally
 │   └── requirements.txt
-├── docs/index.html                          # GitHub Pages landing page
+│   ├── docs/index.html                          # GitHub Pages landing page
 └── .github/workflows/pages.yml              # automatic Pages deployment
 ```
 
@@ -108,7 +108,7 @@ The response includes a probability, the applied threshold, a binary prediction,
 
 ## GitHub Actions and deployment link
 
-`.github/workflows/ml-project-pages.yml` publishes the small landing page in `docs/` to GitHub Pages on every push to `main`. This gives the repository a stable project URL and a clear link to the already deployed CardioSense interface. GitHub Pages does **not** run the Python model server; to expose the real `/predict` endpoint publicly, deploy the FastAPI service to a Python-capable host and configure the front end to call that API URL.
+`.github/workflows/ml-project-pages.yml` publishes the small landing page in `docs/` inside this project folder to GitHub Pages on every push to `main`. This gives the repository a stable project URL and a clear link to the already deployed CardioSense interface. GitHub Pages does **not** run the Python model server; to expose the real `/predict` endpoint publicly, deploy the FastAPI service to a Python-capable host and configure the front end to call that API URL.
 
 The included API is ready for a host such as Render, Railway, Fly.io, or a comparable service, but this repository does not contain provider credentials or automatically create external infrastructure. Never put API keys in GitHub files; use repository/environment secrets.
 

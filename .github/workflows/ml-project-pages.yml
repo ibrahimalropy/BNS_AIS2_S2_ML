@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'ML_Project/docs/**'
+      - 'ML_Project/Cardiovascular diseases/docs/**'
       - '.github/workflows/ml-project-pages.yml'
   workflow_dispatch:
 
@@ -31,7 +31,7 @@ jobs:
       - name: Upload ML_Project site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./ML_Project/docs
+          path: ./ML_Project/Cardiovascular diseases/docs
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

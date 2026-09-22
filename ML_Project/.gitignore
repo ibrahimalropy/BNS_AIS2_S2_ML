@@ -7,6 +7,7 @@ __pycache__/
 # Local data and generated model artifacts
 Cardiovascular diseases/data/*
 !Cardiovascular diseases/data/.gitkeep
+!Cardiovascular diseases/data/CVD_cleaned.csv
 Cardiovascular diseases/models/*
 !Cardiovascular diseases/models/.gitkeep
 
