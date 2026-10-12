@@ -6,13 +6,14 @@ An end-to-end machine-learning project that estimates annual medical insurance c
 
 - `data/insurance.csv` — the 1,338-row insurance dataset.
 - `notebooks/Medical_Charges_Prediction.ipynb` — EDA, feature engineering, train/test split, preprocessing, cross-validated tuning, evaluation, and model export.
+- `notebooks/Project.ipynb` — the original notebook file provided with the project.
 - `src/api.py` — FastAPI prediction endpoint.
 - `models/` — destination for the generated model artifact (not committed).
 - `docs/index.html` — project landing page and reference demo link.
 
 ## Run locally
 
-From this project folder, install dependencies and open the notebook:
+From this project folder, install dependencies and open the runnable, path-adjusted notebook:
 
 ```bash
 python -m venv .venv
