@@ -17,3 +17,7 @@ Cardiovascular diseases/models/*
 # OS/editor
 .DS_Store
 .vscode/
+
+# Medical charges project generated artifacts
+Medical Charges Prediction/models/*
+!Medical Charges Prediction/models/.gitkeep
