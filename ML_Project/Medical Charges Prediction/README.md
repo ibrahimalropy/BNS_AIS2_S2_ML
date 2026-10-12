@@ -2,6 +2,8 @@
 
 An end-to-end machine-learning project that estimates annual medical insurance charges from a policyholder profile. It mirrors the repository’s **Cardiovascular Disease Prediction** layout: dataset, notebook, saved-model location, API, and a small project landing page.
 
+**Live demo:** [MediCharge · AI](https://medcharges-ptpyks8q.manus.space)
+
 ## Project contents
 
 - `data/insurance.csv` — the 1,338-row insurance dataset.
